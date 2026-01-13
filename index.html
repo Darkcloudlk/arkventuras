@@ -2,99 +2,149 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ArkVenturas — Servidor ARK</title>
-  <meta name="description" content="ArkVenturas: info del servidor, rates, mods y comunidad." />
+  <meta name="description" content="ArkVenturas: servidor ARK gestionado por comunidad. Info, rates, mods y acceso." />
+
   <style>
     :root{
-      --bg:#0b0f14; --card:#121a24; --border:#223044; --muted:#b9c6d8;
-      --btn:#162233; --btnBorder:#2b3c55; --primary:#2a5cff;
+      --bg:#0b0f14;
+      --card:#121a24;
+      --border:#223044;
+      --muted:#9fb0c8;
+      --primary:#3b82f6;
+      --accent:#22c55e;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,Segoe UI,Arial;background:var(--bg);color:#e8eef7}
-    .wrap{max-width:980px;margin:0 auto;padding:26px}
-    .top{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:14px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--primary),#7c3aed);box-shadow:0 10px 25px rgba(0,0,0,.25)}
-    h1{margin:0;font-size:30px}
-    .muted{color:var(--muted)}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
-    @media(max-width:860px){.grid{grid-template-columns:1fr}}
-    .pill{display:inline-block;padding:7px 10px;border-radius:999px;background:var(--btn);border:1px solid var(--btnBorder);margin:6px 6px 0 0;font-size:14px}
-    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    a.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:14px;border:1px solid var(--btnBorder);background:var(--btn);color:#e8eef7;text-decoration:none}
+    body{
+      margin:0;
+      font-family:system-ui,Segoe UI,Roboto,Arial;
+      background:linear-gradient(180deg,#0b0f14,#0e1420);
+      color:#e6ecf5;
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:32px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      margin-bottom:26px
+    }
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:52px;height:52px;border-radius:16px;
+      background:linear-gradient(135deg,var(--primary),#8b5cf6);
+      box-shadow:0 10px 30px rgba(0,0,0,.35)
+    }
+    h1{margin:0;font-size:34px;letter-spacing:.3px}
+    .tag{color:var(--muted);font-size:14px}
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:24px;
+      box-shadow:0 20px 50px rgba(0,0,0,.35)
+    }
+
+    .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+    .pill{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#162233;
+      border:1px solid var(--border);
+      margin:6px 6px 0 0;
+      font-size:14px
+    }
+
+    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    a.btn{
+      padding:14px 18px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:#162233;
+      color:#e6ecf5;
+      text-decoration:none;
+      font-weight:600;
+      display:inline-flex;
+      align-items:center;
+      gap:8px
+    }
     a.btn.primary{background:var(--primary);border-color:var(--primary)}
-    a.btn.disabled{opacity:.55;cursor:not-allowed;pointer-events:none}
-    hr{border:none;border-top:1px solid var(--border);margin:16px 0}
-    ul{margin:10px 0 0 18px}
-    code{background:#0b0f14;border:1px solid var(--border);padding:2px 6px;border-radius:8px}
-    .small{font-size:13px}
+    a.btn.disabled{opacity:.5;pointer-events:none}
+
+    h2{margin:0 0 10px;font-size:22px}
+    ul{margin:8px 0 0 18px;color:var(--muted)}
+    hr{border:none;border-top:1px solid var(--border);margin:20px 0}
+    footer{text-align:center;color:var(--muted);font-size:13px;margin-top:26px}
+    code{background:#0b0f14;border:1px solid var(--border);padding:3px 8px;border-radius:8px}
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <div class="top">
+    <header>
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
+        <div class="logo"></div>
         <div>
           <h1>ArkVenturas</h1>
-          <div class="muted">Servidor ARK — Comunidad (tú + tu primo)</div>
+          <div class="tag">Servidor ARK — Comunidad privada</div>
         </div>
       </div>
-      <div class="muted small">Web oficial (versión inicial)</div>
-    </div>
+      <div class="tag">Web oficial</div>
+    </header>
 
     <div class="card">
       <div class="grid">
+        <!-- INFO SERVER -->
         <div>
-          <h2 style="margin:0 0 8px">📌 Info del servidor</h2>
+          <h2>📌 Información del servidor</h2>
 
-          <div>
-            <span class="pill">🎮 Modo: Por definir (PvE / PvP / Mixto)</span>
-            <span class="pill">⚙️ Rates: x?</span>
-            <span class="pill">🐣 Crianza: x?</span>
-            <span class="pill">🧩 Mods: Por definir</span>
-            <span class="pill">🌍 Mapas: Próximamente</span>
-            <span class="pill">🌐 Cluster: En preparación</span>
-          </div>
+          <span class="pill">🎮 Modo: Por definir (PvE / PvP / Mixto)</span>
+          <span class="pill">⚙️ Rates: x?</span>
+          <span class="pill">🐣 Crianza: x?</span>
+          <span class="pill">🧩 Mods: Por definir</span>
+          <span class="pill">🌍 Mapas: Próximamente</span>
+          <span class="pill">🌐 Cluster: En preparación</span>
 
-          <hr />
+          <hr>
 
-          <h3 style="margin:0 0 6px">🔗 Unirse</h3>
-          <p class="muted" style="margin:0 0 10px">
-            IP:PUERTO: <code>Pendiente</code>
-          </p>
+          <h2>🚀 Acceso</h2>
+          <p class="tag">IP:PUERTO — <code>Pendiente</code></p>
 
           <div class="btns">
-            <a class="btn primary disabled" href="#" title="Pendiente de configurar IP y puerto">🦖 Unirse (pendiente)</a>
-            <a class="btn disabled" href="#" title="Pendiente de configurar Discord">💬 Discord (pendiente)</a>
+            <a class="btn primary disabled">🦖 Unirse al servidor</a>
+            <a class="btn disabled">💬 Discord</a>
           </div>
 
-          <p class="small muted" style="margin-top:10px">
-            * Cuando tengamos la IP y el Discord, activamos los botones y ya podrá entrar todo el mundo desde aquí.
+          <p class="tag" style="margin-top:10px">
+            Los accesos se activarán cuando el servidor esté listo.
           </p>
         </div>
 
+        <!-- REGLAS -->
         <div>
-          <h2 style="margin:0 0 8px">📜 Reglas (básicas)</h2>
-          <ul class="muted">
-            <li>Respeto en chat y en Discord.</li>
-            <li>Sin toxicidad ni griefing (según el modo final).</li>
-            <li>No bloquear spawns ni zonas clave con construcciones.</li>
-            <li>Admins: tú y tu primo (sin abusos, todo transparente).</li>
+          <h2>📜 Normas básicas</h2>
+          <ul>
+            <li>Respeto entre jugadores y en Discord.</li>
+            <li>Sin toxicidad ni abusos.</li>
+            <li>Construcciones razonables.</li>
+            <li>Admins: equipo ArkVenturas.</li>
           </ul>
 
-          <hr />
+          <hr>
 
-          <h2 style="margin:0 0 8px">🧾 Anuncios</h2>
-          <p class="muted" style="margin:0">
-            Próximamente: mapas, rates definitivos, lista de mods y link de Discord.
+          <h2>📰 Estado</h2>
+          <p class="tag">
+            Servidor en preparación. Próximamente más información.
           </p>
         </div>
       </div>
     </div>
+
+    <footer>
+      © ArkVenturas — Servidor ARK
+    </footer>
   </div>
 </body>
 </html>
-
