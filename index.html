@@ -13,7 +13,6 @@
       --border:#223044;
       --muted:#9fb0c8;
       --primary:#3b82f6;
-      --accent:#22c55e;
     }
     *{box-sizing:border-box}
     body{
@@ -24,16 +23,21 @@
     }
     .wrap{max-width:1100px;margin:0 auto;padding:32px}
     header{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
       margin-bottom:26px
     }
     .brand{display:flex;align-items:center;gap:14px}
     .logo{
-      width:52px;height:52px;border-radius:16px;
+      width:52px;
+      height:52px;
+      border-radius:16px;
       background:linear-gradient(135deg,var(--primary),#8b5cf6);
       box-shadow:0 10px 30px rgba(0,0,0,.35)
     }
-    h1{margin:0;font-size:34px;letter-spacing:.3px}
+    h1{margin:0;font-size:34px}
     .tag{color:var(--muted);font-size:14px}
 
     .card{
@@ -57,7 +61,12 @@
       font-size:14px
     }
 
-    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btns{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px
+    }
     a.btn{
       padding:14px 18px;
       border-radius:16px;
@@ -70,14 +79,30 @@
       align-items:center;
       gap:8px
     }
-    a.btn.primary{background:var(--primary);border-color:var(--primary)}
-    a.btn.disabled{opacity:.5;pointer-events:none}
+    a.btn.primary{
+      background:var(--primary);
+      border-color:var(--primary)
+    }
+    a.btn.disabled{
+      opacity:.5;
+      pointer-events:none
+    }
 
     h2{margin:0 0 10px;font-size:22px}
     ul{margin:8px 0 0 18px;color:var(--muted)}
     hr{border:none;border-top:1px solid var(--border);margin:20px 0}
-    footer{text-align:center;color:var(--muted);font-size:13px;margin-top:26px}
-    code{background:#0b0f14;border:1px solid var(--border);padding:3px 8px;border-radius:8px}
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      margin-top:28px
+    }
+    code{
+      background:#0b0f14;
+      border:1px solid var(--border);
+      padding:3px 8px;
+      border-radius:8px
+    }
   </style>
 </head>
 
@@ -143,7 +168,8 @@
     </div>
 
     <footer>
-      © ArkVenturas — Servidor ARK
+      © ArkVenturas — Servidor ARK<br>
+      Creadores: <strong>Dark Cloud</strong> · <strong>Byronrex369</strong>
     </footer>
   </div>
 </body>
