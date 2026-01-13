@@ -20,7 +20,7 @@
       font-family:system-ui,Segoe UI,Roboto,Arial;
       color:#e6ecf5;
 
-      /* FONDO ÉPICO + OVERLAY */
+      /* Fondo épico */
       background:
         linear-gradient(180deg, rgba(11,15,20,.90), rgba(14,20,32,.95)),
         url("./bg.jpg"),
@@ -30,7 +30,6 @@
       background-attachment:fixed;
       background-repeat:no-repeat;
 
-      /* VIÑETA CINEMÁTICA */
       box-shadow: inset 0 0 180px rgba(0,0,0,.85);
     }
 
@@ -43,37 +42,17 @@
     header{
       display:flex;
       align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom:28px;
+      justify-content:center;
+      margin-bottom:34px;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-
+    /* LOGO OFICIAL */
     .logo{
-      width:54px;
-      height:54px;
-      border-radius:16px;
-      background:linear-gradient(135deg,var(--primary),#8b5cf6);
-      box-shadow:0 10px 30px rgba(0,0,0,.5);
+      max-width:360px;
+      width:100%;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,.7));
     }
 
-    h1{
-      margin:0;
-      font-size:36px;
-      letter-spacing:.6px;
-    }
-
-    .tag{
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    /* TARJETA PRO */
     .card{
       background:rgba(10,16,24,.92);
       backdrop-filter: blur(8px);
@@ -93,6 +72,7 @@
 
     @media(max-width:900px){
       .grid{grid-template-columns:1fr}
+      .logo{max-width:280px}
     }
 
     .pill{
@@ -170,19 +150,16 @@
 
 <body>
   <div class="wrap">
+
+    <!-- LOGO -->
     <header>
-      <div class="brand">
-        <div class="logo"></div>
-        <div>
-          <h1>ArkVenturas</h1>
-          <div class="tag">Servidor ARK: Survival Ascended — Crossplay</div>
-        </div>
-      </div>
-      <div class="tag">Web oficial</div>
+      <img src="logo.png" alt="ArkVenturas" class="logo">
     </header>
 
+    <!-- CONTENIDO -->
     <div class="card">
       <div class="grid">
+
         <div>
           <h2>📌 Información del servidor</h2>
 
@@ -196,7 +173,7 @@
           <hr>
 
           <h2>🚀 Acceso directo</h2>
-          <p class="tag">IP:PUERTO — <code>37.10.115.177:5100</code></p>
+          <p>IP:PUERTO — <code>37.10.115.177:5100</code></p>
 
           <div class="btns">
             <a class="btn primary" href="steam://connect/37.10.115.177:5100">
@@ -220,10 +197,11 @@
           <hr>
 
           <h2>📰 Estado del servidor</h2>
-          <p class="tag">
+          <p>
             Ubicación: London · Slots: 20 · Crossplay activo
           </p>
         </div>
+
       </div>
     </div>
 
@@ -231,6 +209,7 @@
       © ArkVenturas — Servidor ARK<br>
       Creadores: <strong>Dark Cloud</strong> · <strong>Byronrex369</strong>
     </footer>
+
   </div>
 </body>
 </html>
