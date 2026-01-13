@@ -40,6 +40,11 @@
       padding:32px;
     }
 
+    .tag{
+      color:var(--muted);
+      font-size:14px;
+    }
+
     /* LOGO */
     header{
       text-align:center;
@@ -49,11 +54,9 @@
     .logo{
       display:block;
       margin:0 auto 10px auto;
-
       width:100%;
       max-width:240px;   /* 👈 AJUSTA AQUÍ SI QUIERES */
       height:auto;
-
       filter: drop-shadow(0 15px 35px rgba(0,0,0,.7));
     }
 
@@ -150,6 +153,61 @@
       font-size:13px;
       margin-top:30px;
     }
+
+    /* === Últimos vídeos YouTube === */
+    .videos-section{margin-top:22px}
+    .videos-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    @media(max-width:900px){.videos-grid{grid-template-columns:1fr}}
+
+    .video-card{
+      border:1px solid var(--border);
+      background:rgba(22,34,51,.45);
+      border-radius:18px;
+      padding:16px;
+    }
+
+    .video-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+    }
+    .video-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+    .yt-badge{
+      width:34px;height:34px;flex:0 0 34px;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+    }
+    .video-name{margin:0;font-weight:900}
+    .video-sub{margin:3px 0 0;color:var(--muted);font-size:13px}
+
+    .video-frame{
+      position:relative;
+      width:100%;
+      padding-top:56.25%; /* 16:9 */
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,.25);
+    }
+    .video-frame iframe{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+    }
+
+    a.btn.youtube{
+      background:linear-gradient(135deg,#ff0033,#cc0029);
+      border-color:#ff0033;
+    }
   </style>
 </head>
 
@@ -164,8 +222,8 @@
 
     <!-- CONTENIDO -->
     <div class="card">
-      <div class="grid">
 
+      <div class="grid">
         <div>
           <h2>📌 Información del servidor</h2>
 
@@ -208,6 +266,87 @@
           </p>
         </div>
 
-      </di
+        <!-- ÚLTIMOS VÍDEOS (2 ventanas grandes) -->
+        <div class="videos-section" style="grid-column:1 / -1;">
+          <h2 style="margin:0 0 12px;">📺 Últimos vídeos</h2>
 
+          <div class="videos-grid">
 
+            <!-- ByronRexx -->
+            <div class="video-card">
+              <div class="video-head">
+                <div class="video-title">
+                  <svg class="yt-badge" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#FF0033" d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.4 0-1.5.1-2.4 1C.7 4.5.5 6.2.5 6.2S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.4 0 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
+                    <path fill="#fff" d="M9.75 15.02V7.98L16.02 11.5 9.75 15.02z"/>
+                  </svg>
+
+                  <div style="min-width:0">
+                    <p class="video-name">ByronRexx</p>
+                    <p class="video-sub">Últimas subidas del canal</p>
+                  </div>
+                </div>
+
+                <a class="btn youtube" href="https://www.youtube.com/@ByronRexx" target="_blank">YouTube</a>
+              </div>
+
+              <div class="video-frame">
+                <!-- ByronRexx (Channel ID: UCE8XcdIjx4_f-Ihxnd7Vv-w) => Uploads: UUE8XcdIjx4_f-Ihxnd7Vv-w -->
+                <iframe
+                  src="https://www.youtube.com/embed?listType=playlist&list=UUE8XcdIjx4_f-Ihxnd7Vv-w"
+                  title="ByronRexx - Últimas subidas"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+
+            <!-- DarkCloudGaming6 -->
+            <div class="video-card">
+              <div class="video-head">
+                <div class="video-title">
+                  <svg class="yt-badge" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="#FF0033" d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.4 0-1.5.1-2.4 1C.7 4.5.5 6.2.5 6.2S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.4 0 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
+                    <path fill="#fff" d="M9.75 15.02V7.98L16.02 11.5 9.75 15.02z"/>
+                  </svg>
+
+                  <div style="min-width:0">
+                    <p class="video-name">DarkCloudGaming6</p>
+                    <p class="video-sub">Últimas subidas del canal</p>
+                  </div>
+                </div>
+
+                <a class="btn youtube" href="https://www.youtube.com/@DarkCloudGaming6" target="_blank">YouTube</a>
+              </div>
+
+              <div class="video-frame">
+                <!-- Si esto NO carga, hay que cambiarlo al formato playlist UU... del canal (uploads). -->
+                <iframe
+                  src="https://www.youtube.com/embed?listType=user_uploads&list=DarkCloudGaming6"
+                  title="DarkCloudGaming6 - Últimas subidas"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="tag" style="margin:12px 0 0;">
+            Si algún reproductor no aparece, suele ser por caché o porque el canal necesita el ID (UC...). Se arregla cambiando 1 línea.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      © ArkVenturas — Servidor ARK<br>
+      Creadores: <strong>Dark Cloud</strong> · <strong>Byronrex369</strong>
+    </footer>
+
+  </div>
+</body>
+</html>
